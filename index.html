@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naira-Savvy: Personal Finance & Frugal Living in Nigeria</title>
+  <meta name="description" content="Your ultimate guide to personal finance, smart saving, and frugal living tailored for the Nigerian economic landscape." />
+  <meta name="keywords" content="Naira finance, personal finance Nigeria, frugal living Nigeria, Nigerian economy, saving money Nigeria, investing Nigeria, budgeting Nigeria, wealth management Nigeria, financial advice Nigeria" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">Naira<span>Savvy</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="darkToggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Unlock Your Financial Freedom in Nigeria</h1>
+        <p>Naira-Savvy is your trusted guide to mastering personal finance and embracing frugal living, specifically tailored for the Nigerian economic landscape.</p>
+        <a href="#articles" class="btn btn-primary">Start Reading Now</a>
+        <a href="#newsletter" class="btn">Join Our Community</a>
+      </div>
+    </section>
+
+    <section id="categories" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Explore Key Financial Topics</h2>
+
+        <!-- Category Search -->
+        <div style="text-align:center; margin-bottom: 30px;">
+          <label for="categoryFilter" style="font-weight:600;">Filter Articles by Category:</label>
+          <select id="categoryFilter" style="padding: 8px 15px; border-radius: 5px; border: 1px solid #ccc; margin-left: 10px;">
+            <option value="all">All</option>
+            <option value="budgeting">Budgeting</option>
+            <option value="saving">Saving</option>
+            <option value="investing">Investing</option>
+            <option value="income">Income</option>
+            <option value="debt">Debt</option>
+          </select>
+        </div>
+
+        <!-- Cards -->
+        <div class="category-grid">
+          <!-- Card components go here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="section-padding" style="background-color: var(--white);">
+      <div class="container">
+        <h2 class="section-title">Latest Articles & Insights</h2>
+        <div class="article-grid" id="articleList">
+          <!-- Sample Article -->
+          <div class="article-card" data-category="budgeting">
+            <img src="https://via.placeholder.com/500x300?text=Inflation+Tips" alt="Beating Inflation in Nigeria" />
+            <div class="article-content">
+              <h3>How to Beat Inflation: A Nigerian Survival Guide</h3>
+              <p>Protect your Naira from rising prices and maintain your purchasing power.</p>
+              <div class="article-meta">July 25, 2025 | Budgeting</div>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+          <!-- Add other articles as needed -->
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="cta-section">
+      <div class="container">
+        <h2>Ready to Transform Your Finances?</h2>
+        <p>Join thousands of Nigerians already taking control of their money. Get exclusive tips, resources, and community support delivered straight to your inbox.</p>
+        <a href="#newsletter" class="btn">Sign Up for Our Newsletter</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <!-- Your footer content -->
+  </footer>
+
+  <!-- JavaScript for functionality -->
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Category Filter
+    const categoryFilter = document.getElementById('categoryFilter');
+    const articles = document.querySelectorAll('.article-card');
+    categoryFilter.addEventListener('change', () => {
+      const selected = categoryFilter.value;
+      articles.forEach(article => {
+        const match = article.dataset.category === selected || selected === 'all';
+        article.style.display = match ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
